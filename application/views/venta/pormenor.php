@@ -4,7 +4,7 @@
             <form id="form_buscar" class="form-horizontal" role="form" action="<?= base_url() . 'index.php/venta/buscar' ?>"> 
                 <fieldset>
                     <!-- Form Name -->
-                    <legend><H3>Venta por Mayor</H3></legend>
+                    <legend><H3>Venta por Menor</H3></legend>
                     <div class="form-group">
                         <label class="col-sm-3 control-label col-xs-4 col-xs-offset-1" for="modelo">Modelo/Cod</label>  
                         <div class="col-sm-6 input-group col-xs-4">
@@ -211,9 +211,9 @@
                                     + "<h2 class='media-heading col-xs-6 col-md-12 col-sm-6' id='mod_" + i + "'> Modelo " + reg[i]['modelo']
                                     + "</h2><input type='text' name='modelo' value='" + reg[i]['modelo'] + "' hidden>"
                                     + "<div class='col-md-12 text-center'>"
-                                    + "<input type='radio' name='precio' value='" + reg[i]['precio_m'] + "' onclick='cambiar(this.value," + i + ")' checked hidden/>  "
-                                    + "<input type='radio' name='precio' value='" + reg[i]['precio_u'] + "' onclick='cambiar(this.value," + i + ")' hidden/>"
-                                    + "<label class='dato' id='precio_" + i + "' style='font-size: 200%'> Bs.- " + reg[i]['precio_m'] + "</label>"
+                                    + "<input type='radio' name='precio' value='" + reg[i]['precio_m'] + "' onclick='cambiar(this.value," + i + ")' hidden/>  "
+                                    + "<input type='radio' name='precio' value='" + reg[i]['precio_u'] + "' onclick='cambiar(this.value," + i + ")' checked hidden/>"
+                                    + "<label class='dato' id='precio_" + i + "' style='font-size: 200%'> Bs.- " + reg[i]['precio_u'] + "</label>"
                                     + "</div>"
                                     //+ "<div class='input-group dato'><span class='input-group-addon'>Pedido: </span>"
                                     + "<input class='input-md text-center' id='cant_" + i + "'type='text' name='cantidad' value='1' min='1' max='" + reg[i]['existencia'] + "' autocomplete='off' required hidden/>"

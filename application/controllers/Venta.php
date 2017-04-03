@@ -76,7 +76,7 @@ class Venta extends CI_Controller {
         }
     }
     
-    function PorMayor() {
+    function porMayor() {
         if ($this->session->userdata('login')) {
             /* cabecera y menu lateral */
             $lateral['submenus'] = $this->Menu_model->selectSubmenu();
@@ -86,6 +86,22 @@ class Venta extends CI_Controller {
             $this->load->view('common/menu', $lateral);
             /* contenido */
             $this->load->view('venta/pormayor');
+        } else {
+            $this->session->set_flashdata('mensaje', 'Para acceder al sistema debe iniciar sesión');
+            redirect(base_url() . "index.php/login");
+        }
+    }
+    
+    function porMenor() {
+        if ($this->session->userdata('login')) {
+            /* cabecera y menu lateral */
+            $lateral['submenus'] = $this->Menu_model->selectSubmenu();
+            $lateral['menus'] = $this->Menu_model->selectMenu();
+            $lateral['activo'] = 'Por Menor';
+            $this->load->view('common/head');
+            $this->load->view('common/menu', $lateral);
+            /* contenido */
+            $this->load->view('venta/pormenor');
         } else {
             $this->session->set_flashdata('mensaje', 'Para acceder al sistema debe iniciar sesión');
             redirect(base_url() . "index.php/login");
